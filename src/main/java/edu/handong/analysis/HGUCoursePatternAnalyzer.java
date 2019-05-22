@@ -7,8 +7,8 @@ import java.util.TreeMap;
 
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
-import edu.handong.analysise.utils.NotEnoughArgumentException;
-import edu.handong.analysise.utils.Utils;
+import edu.handong.analysis.utils.NotEnoughArgumentException;
+import edu.handong.analysis.utils.Utils;
 
 public class HGUCoursePatternAnalyzer {
 
@@ -54,7 +54,12 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private HashMap<String,Student> loadStudentCourseRecords(ArrayList<String> lines) {
 		
-		// TODO: Implement this method
+		String[] arrayLines = new String[lines.size()];
+		for(int i=0; i<lines.size(); i++) {
+			arrayLines[i] = lines.get(i);
+			String line = new String(arrayLines[i]);
+			Course courses = new Course(line);
+		}
 		
 		return null; // do not forget to return a proper variable.
 	}
@@ -66,7 +71,7 @@ public class HGUCoursePatternAnalyzer {
      * 0001,14,2,8
 	 * ....
 	 * 
-	 * 0001,14,1,9 => this means, 0001 student registered 14 semeters in total. In the first semeter (1), the student took 9 courses.
+	 * 0001,14,1,9 => this means, 0001 student registered 14 semesters in total. In the first semeter (1), the student took 9 courses.
 	 * 
 	 * 
 	 * @param sortedStudents
